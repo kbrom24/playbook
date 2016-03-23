@@ -49,13 +49,12 @@
      sudo: True
      sudo_user: postgres
   
-   - name: sync the database, apply migrations, collect static content
-     django_manage:
-      command: "{{ item }}"
-      app_path: "{{ proj_path }}" 
-      virtualenv: "{{ venv_path }}"
-     with_items:
-       - syncdb
-       - migrate
-       - collectstatic
+   - name: set the site id
+     script: scripts/setsite.py
+     environment:
+      PATH: "{{ venv_path }} /bin"
+      PROJECT_DIR: "{{ proj_path }}"
+      WEBSITE_DOMAIN: "{{ live_hostname }}"
+      
+      
      
