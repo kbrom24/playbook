@@ -30,7 +30,7 @@
     gunicorn_proc_name: mezzanine
     vars_files:
       - secrets.yml
-  Tasks:
+  tasks:
    - name: create a user
      postgresql_user:
          name: kbrom
