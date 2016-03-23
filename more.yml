@@ -34,7 +34,7 @@
    - name: create a user
      postgresql_user:
          name: "{{ database_name }}
-         password: "kbrom"
+         password: kbrom
      sudo: True
      sudo_user: postgres
     
