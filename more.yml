@@ -54,8 +54,8 @@
       command: "{{ item }}"
       app_path: "{{ proj_path }}" 
       virtualenv: "{{ venv_path }}"
-    with_items:
-     - syncdb
-     - migrate
-     - collectstatic
+     with_items:
+       - syncdb
+       - migrate
+       - collectstatic
      
