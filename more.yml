@@ -51,7 +51,7 @@
    - name: copy setsite script
      copy: 
       src:files/setsite.py
-      dest: "{{ venv_home }} /script"
+      dest: "{{ venv_home }}/script"
       mode: "0755"
    - name: set the site id
      script: scripts/setsite.py
