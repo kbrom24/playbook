@@ -51,12 +51,12 @@
    - name: copy setsite script
      copy: 
       src:files/setsite.py
-      dest: "{{ venv_home }}/script"
+      dest: "{{ venv_home }}"
       mode: "0755"
    - name: set the site id
      script: scripts/setsite.py
      environment:
-      PATH: "{{ venv_path }} /bin"
+      PATH: "{{ venv_path }}/bin"
       PROJECT_DIR: "{{ proj_path }}"
       WEBSITE_DOMAIN: "{{ live_hostname }}"
       
