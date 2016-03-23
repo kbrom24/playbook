@@ -50,7 +50,7 @@
      sudo_user: postgres
    - name: copy setsite script
      copy: 
-      src:files/setsite.py
+      src: files/setsite.py
       dest: "{{ venv_home }}"
       mode: "0755"
    - name: set the site id
