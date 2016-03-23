@@ -33,15 +33,15 @@
   tasks:
    - name: create a user
      postgresql_user:
-         name: kbrom
-         password: kbrom
+         name: "{{ database_name }}
+         password: "kbrom"
      sudo: True
      sudo_user: postgres
     
    - name: create the database
      postgresql_db:
-       name: ansible
-       owner: kbrom
+       name: "{{ database_name }}" 
+       owner: "{{ database_user}}"
        encoding: UTF8
        lc_ctype: en_US.UTF-8
        lc_collate: en_US.UTF-8
