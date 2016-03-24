@@ -1,5 +1,5 @@
 -name: playbook for file
- target: vagrant
+ hosts: vagrant
  tasks:
    
     - name: enable the nginx config file
