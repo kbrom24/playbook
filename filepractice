@@ -1,0 +1,17 @@
+-name: playbook for file
+ target: vagrant
+ tasks:
+   
+    - name: enable the nginx config file
+      file: 
+        src: /etc/nginx/sites-available/mezzaine.conf
+        dest: /etc/nginx/sites-enabled/mezzaine.conf
+      notify: restart nginx
+      sudo: True
+      
+    - name: remove the default nginx config file
+      file: path=/etc/nginx/sites-enabled/default state=absent
+      notify: restart nginx
+      sudo: True
+      
+  
